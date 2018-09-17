@@ -1,0 +1,10 @@
+{
+    "name": "localenv-example",
+    "description": "A simple \"hello world\" application built as an example for localenv",
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

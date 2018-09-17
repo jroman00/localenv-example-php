@@ -1,0 +1,20 @@
+version: '3'
+
+volumes:
+  logs:
+    driver: local
+
+services:
+  localenv-example:
+    container_name: localenv-example
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${PWD}:/var/www
+    networks:
+      - localenv_network
+
+networks:
+  localenv_network:
+    external: true
