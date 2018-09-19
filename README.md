@@ -1,20 +1,16 @@
-# Example Application
+# Localenv Example
 
-A simple hello world application
+An example "hello world" application built for the purpose of demonstrating how to use [`localenv`](https://github.com/jroman00/localenv)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
-
-### Installation
-
-This application should be developed as part of the [`localenv`](https://github.com/jroman00/localenv) network. See the [localenv installation instructions](https://github.com/jroman00/localenv/blob/master/README.md) to get started
+This application is not intended to be used on its own and should only be used as part of the [`localenv`](https://github.com/jroman00/localenv) ecosystem. See the [localenv installation instructions](https://github.com/jroman00/localenv/blob/master/README.md) to get started
 
 ## Scripts
 
 ### Running a Shell
 
-To connect to the running container:
+Once running via [`localenv`](https://github.com/jroman00/localenv), connect to the running container via:
 
 ```
 docker-compose exec localenv-example sh
