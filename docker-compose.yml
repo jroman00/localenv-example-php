@@ -1,9 +1,5 @@
 version: '3'
 
-volumes:
-  logs:
-    driver: local
-
 services:
   localenv-example:
     container_name: localenv-example

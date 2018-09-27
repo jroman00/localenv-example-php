@@ -10,6 +10,7 @@ COPY . /var/www
 # Install dependencies
 RUN composer install
 
+# Expose application port
 EXPOSE 8080
 
 # Start the php server
