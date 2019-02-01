@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset>
+    <description>Coding standards</description>
+
+    <!-- Additional configs -->
+    <config name="installed_paths" value="vendor/jroman00/php-coding-standards" />
+
+    <!-- Generic -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure" />
+    <rule ref="Generic.Files.LineEndings" />
+    <rule ref="Generic.Formatting.SpaceAfterCast" />
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+
+    <!-- Jroman00 -->
+    <rule ref="Jroman00" />
+
+    <!-- PEAR -->
+    <rule ref="PEAR.Functions.ValidDefaultValue" />
+
+    <!-- PSR -->
+    <rule ref="PSR2">
+        <exclude name="Generic.Files.LineLength" />
+    </rule>
+
+    <!-- Squiz -->
+    <rule ref="Squiz.Classes.ValidClassName" />
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="ignoreNewlines" value="true" />
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+</ruleset>

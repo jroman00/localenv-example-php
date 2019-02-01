@@ -1,4 +1,17 @@
-FROM php:7.2.6-alpine3.7
+FROM php:7.3.1-cli-alpine3.8
+
+# Set up environment variables
+ENV APP_NAME localenv-example-php
+ENV APP_VERSION 0.0.1
+
+# Install services
+RUN apk add --no-cache --update $PHPIZE_DEPS
+
+# Install Xdebug
+RUN pecl install xdebug-2.7.0RC1
+
+# Enable php extensions
+RUN docker-php-ext-enable xdebug
 
 # Include composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

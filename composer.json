@@ -1,10 +1,32 @@
 {
-    "name": "localenv-example",
-    "description": "A simple \"hello world\" application built as an example for localenv",
-    "require": {
-        "php": ">=7.2.0"
-    },
-    "config": {
-        "sort-packages": true
-    }
+	"name": "jroman00/localenv-example-php",
+	"description": "A simple PHP application built as an example for localenv",
+	"config": {
+		"sort-packages": true
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "src/"
+		}
+	},
+	"repositories": [{
+		"type": "vcs",
+		"url": "https://github.com/jroman00/php-coding-standards.git"
+	}],
+	"require": {
+		"predis/predis": "^1.1",
+		"slim/slim": "^3.12"
+	},
+	"require-dev": {
+		"jroman00/php-coding-standards": "^1.7",
+		"mockery/mockery": "^1.2",
+		"phpunit/phpunit": "^8.0",
+		"squizlabs/php_codesniffer": "^3.4"
+	},
+	"scripts": {
+		"lint": "./vendor/bin/phpcs -p --standard=ruleset.xml src test",
+		"lint-fix": "./vendor/bin/phpcbf -p --standard=ruleset.xml src test",
+		"test": "./vendor/bin/phpunit test",
+		"test-coverage": "./vendor/bin/phpunit test --coverage-html coverage"
+	}
 }

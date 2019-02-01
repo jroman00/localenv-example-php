@@ -11,7 +11,7 @@ source $LOCALENV_DIR/bin/utils/shell-helpers.sh
 
 # Main function
 main() {
-  echo_yellow "Starting localenv-example repo..."
+  echo_yellow "Starting localenv-example-php repo..."
 
   (
     # Make sure script is running from the main application directory
@@ -21,7 +21,8 @@ main() {
     docker-compose up -d
   )
 
-  echo_green "localenv-example repo started successfully!\n"
+  echo_green "localenv-example-php repo started successfully!\n"
 }
 
+# Execute main functionality
 main

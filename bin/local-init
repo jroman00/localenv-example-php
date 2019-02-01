@@ -9,31 +9,52 @@ readonly APP_DIR=$(cd $(dirname "$PARENT_DIR") && pwd -P)
 
 source $LOCALENV_DIR/bin/utils/shell-helpers.sh
 
-# Main function
+# Main functionality of the script
 main() {
-  echo_yellow "Initializing localenv-example repo..."
-
-  # Setup local database
-  # $LOCALENV_DIR/bin/utils/setup-local-postgres-database \
-  #   -c global-postgres \
-  #   -n localenv-example \
-  #   -u postgres
+  echo_yellow "Initializing localenv-example-php repo..."
 
   (
     # Make sure script is running from the main application directory
     cd $APP_DIR
 
     # Build docker images
+    echo "${TAB}Building docker images with docker-compose..."
     docker-compose build
 
     # Install dependencies
-    docker-compose run localenv-example composer install
+    echo "${TAB}Installing dependencies..."
+    docker-compose run localenv-example-php composer install
 
     # Start docker containers
+    echo "${TAB}Starting containers with docker-compose..."
     docker-compose up -d
   )
 
-  echo_green "localenv-example repo initialized successfully!\n"
+  echo_green "localenv-example-php repo initialized successfully!\n"
 }
 
+# Function that outputs usage information
+usage() {
+  cat <<EOF
+
+Usage: $BIN_ROOT/$(basename $0) <options>
+
+Script used to initialize this application
+
+Options:
+  -h                Print this message and quit
+
+EOF
+}
+
+# Parse input options
+while getopts ":h-:" opt; do
+  case "$opt" in
+    h) usage && exit 0;;
+    \?) echo "Invalid option: -$OPTARG." && usage && exit 1;;
+    :) echo >&2 "Option -$OPTARG requires an argument." && exit 1;;
+  esac
+done
+
+# Execute main functionality
 main

@@ -1,15 +1,20 @@
 version: '3'
 
 services:
-  localenv-example:
-    container_name: localenv-example
+  localenv-example-php:
+    container_name: localenv-example-php
     build: .
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "public"]
     ports:
       - "8080:8080"
     volumes:
-      - ${PWD}:/var/www
+      - ${PWD}:/var/www:delegated
     networks:
       - localenv_network
+    environment:
+      APP_REDIS_HOST: global-redis
+      APP_REDIS_PORT: 6379
+      XDEBUG_CONFIG: "remote_host=host.docker.internal remote_enable=1"
 
 networks:
   localenv_network:
