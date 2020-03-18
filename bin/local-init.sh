@@ -23,7 +23,7 @@ main() {
 
     # Install dependencies
     echo "Installing dependencies..."
-    docker-compose run localenv-example-php composer install
+    docker-compose run --rm localenv-example-php composer install
 
     # Start docker containers
     echo "Starting containers with docker-compose..."

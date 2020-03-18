@@ -1,4 +1,4 @@
-FROM php:7.3.1-cli-alpine3.8
+FROM php:7.4.3-alpine3.11
 
 # Set up environment variables
 ENV APP_NAME localenv-example-php
@@ -8,7 +8,7 @@ ENV APP_VERSION 0.0.1
 RUN apk add --no-cache --update $PHPIZE_DEPS
 
 # Install Xdebug
-RUN pecl install xdebug-2.7.0RC1
+RUN pecl install xdebug-2.9.3
 
 # Enable php extensions
 RUN docker-php-ext-enable xdebug
