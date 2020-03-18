@@ -18,7 +18,7 @@ $c = new \Slim\Container($configuration);
 $app = new \Slim\App($c);
 
 $app->get('/', function (Request $request, Response $response, array $args) {
-    return $response->getBody()->write('Hello world!');
+    return $response->getBody()->write('Hello world, from PHP!');
 });
 
 $app->get('/health', StatusController::class . ":getHealth");
