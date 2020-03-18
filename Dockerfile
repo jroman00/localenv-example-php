@@ -24,7 +24,7 @@ COPY . /var/www
 RUN composer install
 
 # Expose application port
-EXPOSE 8080
+EXPOSE 8081
 
 # Start the php server
-CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]
+CMD ["php", "-S", "0.0.0.0:8081", "-t", "public"]
