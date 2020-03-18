@@ -36,4 +36,10 @@ Once running via [`localenv`](https://github.com/jroman00/localenv), connect to 
 docker-compose exec localenv-example-php sh
 ```
 
+To bring up a new container instance, run:
+
+```bash
+docker-compose --rm run localenv-example-php sh
+```
+
 Once connected to the running container, you can run commands directly via `composer` (e.g. `composer run lint`, `composer run test`). See the `scripts` section of `composer.json` for the full list of available scripts
