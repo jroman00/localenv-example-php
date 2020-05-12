@@ -2,6 +2,19 @@
 
 A simple PHP application built as an example for localenv [`localenv`](https://github.com/jroman00/localenv)
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Getting Started](#getting-started)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Scripts](#scripts)
+  - [Running a Shell](#running-a-shell)
+
+<!-- /code_chunk_output -->
+
 ---
 
 ## Getting Started
@@ -15,7 +28,7 @@ This application is not intended to be used on its own and should only be used a
 * [Slim](https://www.slimframework.com/)
 * [PHPUnit](https://phpunit.de/)
 * [Mockery](http://docs.mockery.io/en/latest/)
-* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+* [PHP\_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 * [EditorConfig](https://editorconfig.org/)
 
 ## Features
