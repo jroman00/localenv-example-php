@@ -2,6 +2,8 @@
 
 A simple PHP application built as an example for localenv [`localenv`](https://github.com/jroman00/localenv)
 
+---
+
 ## Getting Started
 
 This application is not intended to be used on its own and should only be used as part of the [`localenv`](https://github.com/jroman00/localenv) ecosystem. See the [localenv installation instructions](https://github.com/jroman00/localenv/blob/master/README.md) to get started
@@ -30,16 +32,10 @@ This application is not intended to be used on its own and should only be used a
 
 ### Running a Shell
 
-Once running via [`localenv`](https://github.com/jroman00/localenv), connect to the running container via:
+Once running via [`localenv`](https://github.com/jroman00/localenv), connect to a new container instance via:
 
 ```bash
-docker-compose exec localenv-example-php sh
-```
-
-To bring up a new container instance, run:
-
-```bash
-docker-compose --rm run localenv-example-php sh
+make shell
 ```
 
 Once connected to the running container, you can run commands directly via `composer` (e.g. `composer run lint`, `composer run test`). See the `scripts` section of `composer.json` for the full list of available scripts

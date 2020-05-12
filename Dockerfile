@@ -1,11 +1,13 @@
-FROM php:7.4.3-alpine3.11
+FROM php:7.4.3-cli
 
 # Set up environment variables
 ENV APP_NAME localenv-example-php
-ENV APP_VERSION 0.0.1
+ENV APP_VERSION 0.1.0
 
 # Install services
-RUN apk add --no-cache --update $PHPIZE_DEPS
+RUN apt-get update \
+  && apt-get install -y $PHPIZE_DEPS \
+  && apt-get install -y --no-install-recommends git zip unzip
 
 # Install Xdebug
 RUN pecl install xdebug-2.9.3
