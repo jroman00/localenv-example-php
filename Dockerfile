@@ -1,4 +1,4 @@
-FROM php:7.4.3-cli
+FROM php:7.4.9-cli
 
 # Set up environment variables
 ENV APP_NAME localenv-example-php
