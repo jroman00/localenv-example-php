@@ -4,10 +4,10 @@ init:
 	bash ./bin/local-init.sh
 
 lint:
-	docker-compose run --rm localenv-example-php composer run lint
+	composer run lint
 
 lint-fix:
-	docker-compose run --rm localenv-example-php composer run lint-fix
+	composer run lint:fix
 
 log:
 	docker-compose logs -f localenv-example-php
@@ -25,10 +25,10 @@ stop:
 	bash ./bin/local-stop.sh
 
 test:
-	docker-compose run --rm localenv-example-php composer run test
+	composer run test
 
 test-coverage:
-	docker-compose run --rm localenv-example-php composer run test-coverage
+	composer run test:coverage
 
 #############################################################
 # Help Documentation

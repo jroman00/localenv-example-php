@@ -28,8 +28,8 @@
     },
     "scripts": {
         "lint": "./vendor/bin/phpcs -p --standard=ruleset.xml src test",
-        "lint-fix": "./vendor/bin/phpcbf -p --standard=ruleset.xml src test",
+        "lint:fix": "./vendor/bin/phpcbf -p --standard=ruleset.xml src test",
         "test": "./vendor/bin/phpunit test",
-        "test-coverage": "./vendor/bin/phpunit test --coverage-html coverage"
+        "test:coverage": "./vendor/bin/phpunit test --coverage-html coverage"
     }
 }
