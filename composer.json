@@ -2,7 +2,10 @@
     "name": "jroman00/localenv-example-php",
     "description": "A simple PHP application built as an example for localenv",
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
     },
     "autoload": {
         "psr-4": {
