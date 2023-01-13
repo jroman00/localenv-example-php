@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69973b0e78d0a77a632698a748d2b300",
+    "content-hash": "41624b247d4650ef4922aed766e3815f",
     "packages": [
         {
             "name": "nikic/fast-route",
@@ -477,46 +477,46 @@
         },
         {
             "name": "jroman00/php-coding-standards",
-            "version": "v1.9.1",
+            "version": "v1.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jroman00/php-coding-standards.git",
-                "reference": "9f41d8ce082ced0fc24b541d53be201713c467fa"
+                "reference": "c45596a50723fb35b543f545fd5db19eb567bf5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jroman00/php-coding-standards/zipball/9f41d8ce082ced0fc24b541d53be201713c467fa",
-                "reference": "9f41d8ce082ced0fc24b541d53be201713c467fa",
+                "url": "https://api.github.com/repos/jroman00/php-coding-standards/zipball/c45596a50723fb35b543f545fd5db19eb567bf5c",
+                "reference": "c45596a50723fb35b543f545fd5db19eb567bf5c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0"
+                "php": "^7.2",
+                "squizlabs/php_codesniffer": "^3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5",
-                "squizlabs/php_codesniffer": "^3.3"
+                "phpunit/phpunit": "^6.5"
             },
             "type": "coding-standard",
             "scripts": {
                 "lint": [
-                    "./vendor/bin/phpcs -p Jroman00"
+                    "php ./vendor/bin/phpcs -p Jroman00"
                 ],
                 "lint-fix": [
-                    "./vendor/bin/phpcbf -p Jroman00"
+                    "php ./vendor/bin/phpcbf -p Jroman00"
                 ],
-                "phpunit": [
-                    "./vendor/bin/phpunit --configuration phpunit.xml"
+                "test": [
+                    "php ./vendor/bin/phpunit --configuration phpunit.xml"
                 ],
-                "phpunit-coverage": [
-                    "./vendor/bin/phpunit --configuration phpunit.xml --coverage-html test-reports/html"
+                "test-coverage": [
+                    "php ./vendor/bin/phpunit --configuration phpunit.xml --coverage-html ./coverage/html"
                 ]
             },
             "description": "Additional CodeSniffer rules",
             "support": {
-                "source": "https://github.com/jroman00/php-coding-standards/tree/v1.9.1",
+                "source": "https://github.com/jroman00/php-coding-standards/tree/v1.9.4",
                 "issues": "https://github.com/jroman00/php-coding-standards/issues"
             },
-            "time": "2020-05-18T22:11:42+00:00"
+            "time": "2023-01-13T02:38:57+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -2360,5 +2360,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

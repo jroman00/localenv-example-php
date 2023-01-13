@@ -30,3 +30,18 @@ start:
 .PHONY: stop
 stop:
 	bash ./bin/local-stop.sh
+
+## lint: Run lint suite
+.PHONY: lint
+lint:
+	composer lint
+
+## lint-fix: Run lint suite fixer
+.PHONY: lint-fix
+lint-fix:
+	composer lint:fix
+
+## test: Run test suite
+.PHONY: test
+test:
+	composer test

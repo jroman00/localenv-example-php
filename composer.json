@@ -21,7 +21,7 @@
         "slim/slim": "^3.12"
     },
     "require-dev": {
-        "jroman00/php-coding-standards": "^1.7",
+        "jroman00/php-coding-standards": "^1.9",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^8.0",
         "squizlabs/php_codesniffer": "^3.4"
