@@ -34,14 +34,14 @@ stop:
 ## lint: Run lint suite
 .PHONY: lint
 lint:
-	composer lint
+	docker-compose run --rm localenv-example-php composer lint
 
 ## lint-fix: Run lint suite fixer
 .PHONY: lint-fix
 lint-fix:
-	composer lint:fix
+	docker-compose run --rm localenv-example-php composer lint:fix
 
 ## test: Run test suite
 .PHONY: test
 test:
-	composer test
+	docker-compose run --rm localenv-example-php composer test
