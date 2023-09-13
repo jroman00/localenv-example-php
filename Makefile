@@ -33,5 +33,5 @@ lint-fix: ## Run the lint suite fixer
 	docker-compose run --rm localenv-example-php composer lint:fix
 
 .PHONY: test
-test: ## test: Run the test suite
+test: ## Run the test suite
 	docker-compose run --rm localenv-example-php composer test
