@@ -18,7 +18,7 @@ main() {
     cd $APP_DIR
 
     # Stop docker containers
-    docker-compose stop
+    docker compose stop
   )
 
   echo_green "localenv-example-php repo stopped successfully!\n"

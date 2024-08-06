@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   localenv-example-php:
     container_name: localenv-example-php

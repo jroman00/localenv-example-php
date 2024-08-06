@@ -18,16 +18,16 @@ main() {
     cd $APP_DIR
 
     # Build docker images
-    echo "Building docker images with docker-compose..."
-    docker-compose build
+    echo "Building docker images with docker compose..."
+    docker compose build
 
     # Install dependencies
     echo "Installing dependencies..."
-    docker-compose run --rm localenv-example-php composer install
+    docker compose run --rm localenv-example-php composer install
 
     # Start docker containers
-    echo "Starting containers with docker-compose..."
-    docker-compose up -d
+    echo "Starting containers with docker compose..."
+    docker compose up -d
   )
 
   echo_green "localenv-example-php repo initialized successfully!\n"

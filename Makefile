@@ -10,11 +10,11 @@ init: ## Initialize the local env, install dependencies, and build all container
 
 .PHONY: log
 log: ## Tail container logs
-	docker-compose logs -f localenv-example-php
+	docker compose logs -f localenv-example-php
 
 .PHONY: shell
 shell: ## Start a shell session in a new container
-	docker-compose run --rm localenv-example-php bash
+	docker compose run --rm localenv-example-php bash
 
 .PHONY: start
 start: ## Start containers and run the application
@@ -26,12 +26,12 @@ stop: ## Stop containers and the application
 
 .PHONY: lint
 lint: ## Run the lint suite
-	docker-compose run --rm localenv-example-php composer lint
+	docker compose run --rm localenv-example-php composer lint
 
 .PHONY: lint-fix
 lint-fix: ## Run the lint suite fixer
-	docker-compose run --rm localenv-example-php composer lint:fix
+	docker compose run --rm localenv-example-php composer lint:fix
 
 .PHONY: test
 test: ## Run the test suite
-	docker-compose run --rm localenv-example-php composer test
+	docker compose run --rm localenv-example-php composer test
