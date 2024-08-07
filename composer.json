@@ -17,6 +17,7 @@
         "url": "https://github.com/jroman00/php-coding-standards.git"
     }],
     "require": {
+        "doctrine/dbal": "^3.8",
         "predis/predis": "^1.1",
         "slim/slim": "^3.12"
     },

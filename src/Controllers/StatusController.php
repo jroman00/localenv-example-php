@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Helpers\MysqlHelper;
+use App\Helpers\PostgresHelper;
 use App\Helpers\RedisHelper;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -17,6 +19,22 @@ class StatusController extends BaseController
      * @var string
      */
     public const STATUS_ERROR = 'error';
+
+    /**
+     * @return MysqlHelper
+     */
+    private function getMysqlHelper(): MysqlHelper
+    {
+        return MysqlHelper::getInstance();
+    }
+
+    /**
+     * @return PostgresHelper
+     */
+    private function getPostgresHelper(): PostgresHelper
+    {
+        return PostgresHelper::getInstance();
+    }
 
     /**
      * @return RedisHelper
@@ -47,9 +65,15 @@ class StatusController extends BaseController
      */
     public function getReady(Request $request, Response $response, array $args): Response
     {
+        $mysql = $this->getMysqlHelper();
+        $postgres = $this->getPostgresHelper();
+        $redis = $this->getRedisHelper();
+
         return $response->withJson([
             'service' => static::STATUS_OK,
-            'redis' => $this->getRedisHelper()->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
+            'mysql' => $mysql->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
+            'postgres' => $postgres->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
+            'redis' => $redis->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
         ]);
     }
 
