@@ -54,6 +54,7 @@ class StatusController extends BaseController
     {
         return $response->withJson([
             'service' => static::STATUS_OK,
+            'version' => getenv('APP_VERSION'),
         ]);
     }
 
@@ -65,29 +66,21 @@ class StatusController extends BaseController
      */
     public function getReady(Request $request, Response $response, array $args): Response
     {
-        $mysql = $this->getMysqlHelper();
-        $postgres = $this->getPostgresHelper();
-        $redis = $this->getRedisHelper();
+        $mysqlIsReady = $this->getMysqlHelper()->isReady();
+        $postgresIsReady = $this->getPostgresHelper()->isReady();
+        $redisIsReady = $this->getRedisHelper()->isReady();
 
-        return $response->withJson([
-            'service' => static::STATUS_OK,
-            'mysql' => $mysql->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
-            'postgres' => $postgres->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
-            'redis' => $redis->isReady() ? static::STATUS_OK : static::STATUS_ERROR,
-        ]);
-    }
+        $status = 200;
+        if (!$mysqlIsReady || !$postgresIsReady || !$redisIsReady) {
+            $status = 500;
+        }
 
-    /**
-     * @param Request $request
-     * @param Response $response
-     * @param array $args
-     * @return Response
-     */
-    public function getVersion(Request $request, Response $response, array $args): Response
-    {
         return $response->withJson([
             'service' => static::STATUS_OK,
             'version' => getenv('APP_VERSION'),
-        ]);
+            'mysql' => $mysqlIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+            'postgres' => $postgresIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+            'redis' => $redisIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+        ], $status);
     }
 }

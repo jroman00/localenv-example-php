@@ -23,6 +23,5 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/health', StatusController::class . ":getHealth");
 $app->get('/ready', StatusController::class . ":getReady");
-$app->get('/version', StatusController::class . ":getVersion");
 
 $app->run();
