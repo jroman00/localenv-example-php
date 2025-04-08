@@ -7,7 +7,7 @@ use Predis\Client;
 class RedisHelper
 {
     /**
-     * @var static
+     * @var self
      */
     private static $instance;
 

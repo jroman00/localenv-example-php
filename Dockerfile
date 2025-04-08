@@ -12,7 +12,7 @@ RUN apt-get update \
 # Install Xdebug
 RUN pecl install xdebug-2.9.3
 
-# Install database dpendencies
+# Install database dependencies
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
   && docker-php-ext-install pdo pdo_mysql pgsql pdo_pgsql
 

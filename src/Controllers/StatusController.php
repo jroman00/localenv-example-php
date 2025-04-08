@@ -78,9 +78,11 @@ class StatusController extends BaseController
         return $response->withJson([
             'service' => static::STATUS_OK,
             'version' => getenv('APP_VERSION'),
-            'mysql' => $mysqlIsReady ? static::STATUS_OK : static::STATUS_ERROR,
-            'postgres' => $postgresIsReady ? static::STATUS_OK : static::STATUS_ERROR,
-            'redis' => $redisIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+            'dependencies' => [
+                'mysql' => $mysqlIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+                'postgres' => $postgresIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+                'redis' => $redisIsReady ? static::STATUS_OK : static::STATUS_ERROR,
+            ],
         ], $status);
     }
 }

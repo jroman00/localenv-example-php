@@ -9,7 +9,7 @@ use Exception;
 class MysqlHelper
 {
     /**
-     * @var static
+     * @var self
      */
     private static $instance;
 

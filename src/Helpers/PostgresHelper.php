@@ -9,7 +9,7 @@ use Exception;
 class PostgresHelper
 {
     /**
-     * @var static
+     * @var self
      */
     private static $instance;
 
@@ -64,7 +64,6 @@ class PostgresHelper
 
             return true;
         } catch (Exception $e) {
-            var_dump($e);exit;
             return false;
         }
     }
